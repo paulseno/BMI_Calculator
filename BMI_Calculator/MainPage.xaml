@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMI_Calculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="15">
+            
+            <Border
+                BackgroundColor="#6CC04A"
+                StrokeShape="RoundRectangle 20"
+                HeightRequest="300">
+                
+                <VerticalStackLayout
+                    Padding="30"
+                    Spacing="25"
+                    VerticalOptions="Center">
+                    <Label
+                        Text="Enter Weight (in kg)"
+                        TextColor="White"
+                        Style="{StaticResource SubHeadline}"
+                        />
+                    <Entry
+                        x:Name="WeightEntry"
+                        TextColor="White"/>
+                    <Label
+                        Text="Enter Height (in cm)"
+                        TextColor="White"
+                        Style="{StaticResource SubHeadline}"
+                        />
+                    <Entry
+                        x:Name="HeightEntry"
+                        TextColor="White"/>
+                </VerticalStackLayout>
+            </Border>
+            <Button
+                Text="Calculate BMI" 
+                SemanticProperties.Hint="Calculates the BMI"
+                Clicked="OnButtonClick"
+                BackgroundColor="#6CC04A"
+                HorizontalOptions="Fill" />
+            
+            <Grid
+                Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Column="0"
+                    Text="BMI:"
+                    HorizontalTextAlignment="Center"
+                    FontSize="24"
+                />
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    HorizontalTextAlignment="Center"
+                    FontSize="19"
+                    x:Name="ResultLabel">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="Categories"
+                    HorizontalTextAlignment="Center"
+                    FontSize="24"
+                />
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Underweight: &lt; 18.6&#10;Healthy: 18.6 - 24.9&#10;Overweight: 25 - 29.9&#10;Obese: &gt; 29.9"
+                    HorizontalTextAlignment="Center"
+                    FontSize="16"
+                    LineHeight="1"
+                />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
