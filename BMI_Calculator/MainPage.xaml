@@ -6,81 +6,91 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="25"
-            Spacing="15">
+            Spacing="15"
+            BackgroundColor="#eef2f3">
             
-            <Border
-                BackgroundColor="#6CC04A"
-                StrokeShape="RoundRectangle 20"
-                HeightRequest="300">
-                
-                <VerticalStackLayout
-                    Padding="30"
-                    Spacing="25"
-                    VerticalOptions="Center">
-                    <Label
-                        Text="Enter Weight (in kg)"
-                        TextColor="White"
-                        Style="{StaticResource SubHeadline}"
-                        />
-                    <Entry
-                        x:Name="WeightEntry"
-                        TextColor="White"/>
-                    <Label
-                        Text="Enter Height (in cm)"
-                        TextColor="White"
-                        Style="{StaticResource SubHeadline}"
-                        />
-                    <Entry
-                        x:Name="HeightEntry"
-                        TextColor="White"/>
-                </VerticalStackLayout>
-            </Border>
-            <Button
-                Text="Calculate BMI" 
-                SemanticProperties.Hint="Calculates the BMI"
-                Clicked="OnButtonClick"
-                BackgroundColor="#6CC04A"
-                HorizontalOptions="Fill" />
-            
-            <Grid
-                Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+            <Label
+                Text="BMI Calculator"
+                HorizontalTextAlignment="Center"
+                TextColor="#299df6"
+                FontSize="24"
+                FontAttributes="Bold"
+            />
+            <Grid ColumnSpacing="20">
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label
+
+                <Border
                     Grid.Column="0"
-                    Text="BMI:"
-                    HorizontalTextAlignment="Center"
-                    FontSize="24"
-                />
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="1"
-                    HorizontalTextAlignment="Center"
-                    FontSize="19"
-                    x:Name="ResultLabel">
-                </Label>
-                <Label
+                    BackgroundColor="white"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="20"
+                    HeightRequest="180">
+
+                    <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                        <Label
+                            Text="Enter Weight (kg)"
+                            HorizontalTextAlignment="Center"
+                            FontSize="20" />
+                        <Entry
+                            x:Name="WeightEntry"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
                     Grid.Column="1"
-                    Grid.Row="0"
-                    Text="Categories"
-                    HorizontalTextAlignment="Center"
-                    FontSize="24"
-                />
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="1"
-                    Text="Underweight: &lt; 18.6&#10;Healthy: 18.6 - 24.9&#10;Overweight: 25 - 29.9&#10;Obese: &gt; 29.9"
-                    HorizontalTextAlignment="Center"
-                    FontSize="16"
-                    LineHeight="1"
-                />
+                    BackgroundColor="White"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="20"
+                    HeightRequest="180">
+
+                    <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                        <Label
+                            Text="Enter Height (cm)"
+                            HorizontalTextAlignment="Center"
+                            FontSize="20" />
+                        <Entry
+                            x:Name="HeightEntry" />
+                    </VerticalStackLayout>
+
+                </Border>
+
             </Grid>
+            
+            <Button
+                Text="Calculate BMI" 
+                TextColor="Black"
+                BorderWidth="3"
+                SemanticProperties.Hint="Calculates the BMI"
+                Clicked="OnButtonClick"
+                BackgroundColor="#299df6"
+                HorizontalOptions="Fill" />
+                
+            <Label
+                Text="BMI:"
+                HorizontalTextAlignment="Center"
+                FontSize="24"
+            />
+            <Label
+                HorizontalTextAlignment="Center"
+                FontSize="30"
+                x:Name="ResultLabel">
+            </Label>
+            <Label
+                Text="Categories"
+                Margin="0, 65, 0,0"
+                HorizontalTextAlignment="Center"
+                FontSize="24"
+            />
+            <Label
+                Text="Underweight: &lt; 18.6&#10;Healthy: 18.6 - 24.9&#10;Overweight: 25 - 29.9&#10;Obese: 30 - 39.9&#10;Extreme: &gt; 39.9"
+                HorizontalTextAlignment="Center"
+                FontSize="16"
+                LineHeight="1"
+            />
         </VerticalStackLayout>
     </ScrollView>
 

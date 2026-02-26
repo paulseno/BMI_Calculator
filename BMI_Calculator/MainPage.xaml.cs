@@ -7,7 +7,8 @@ public partial class MainPage : ContentPage
         Underweight,
         Healthy,
         Overweight,
-        Obese
+        Obese,
+        Extreme
     }
 
     public MainPage()
@@ -30,9 +31,12 @@ public partial class MainPage : ContentPage
                 category = Category.Healthy;
             else if (bmi <= 29.9)
                 category = Category.Overweight;
-            else
+            else if (bmi <= 39.9)
                 category = Category.Obese;
-
+            else {
+                category = Category.Extreme; 
+            }
+        
             ResultLabel.Text = $"{bmi:F2}\n{category}";
             SemanticScreenReader.Announce(ResultLabel.Text);
         }
