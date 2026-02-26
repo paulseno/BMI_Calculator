@@ -81,7 +81,7 @@
             </Label>
             <Label
                 Text="Categories"
-                Margin="0, 65, 0,0"
+                Margin="0, 55, 0,0"
                 HorizontalTextAlignment="Center"
                 FontSize="24"
             />
